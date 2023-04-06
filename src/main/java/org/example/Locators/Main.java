@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 public class Main {
     public static void main(String[] args){
 
-//        System.setProperty("webdriver.chrome.driver","C:\\Users\\HP\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver1","C:\\Users\\HP\\Downloads\\chromedriver_win32\\chromedriver.exe");
 //        WebDriver driver=new ChromeDriver();
 //        driver.get("https://www.c-sharpcorner.com/");
 //        //Navigating to URL
@@ -20,6 +20,7 @@ public class Main {
 //        login.set_Username("ankityadavjal2726@gmail.com");
 //        login.set_Password("ankit123");
 //        login.click_button();
+
 //
 //
 //        Blogs blog=new Blogs(driver);
