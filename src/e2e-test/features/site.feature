@@ -1,31 +1,17 @@
-@smoke
-Feature: Login functionality
+Feature: Adding Comments functionality on the website
 
-  Scenario: User logs in successfully
-    Given the user is on the login page
-    When the user enters valid credentials
-    Then the user should be logged in
-
-
-Feature:  Blogs functionality
-
-    Scenario: User visit on blogs
-  When the user is on blogs button
-  Then the user clicks on blogs button
+  Scenario: User on the site's main page
+    Given Open up chrome and launch application
+    When Enter the valid username and password
+    And User successfully logged in
+    When The user clicks on blogs button
+    When The user clicks on sequence link
+    Then The user writes his comment and enter
 
 
-Feature:  Sequence functionality
-
-  Scenario: User visit on sequence link
-    When the user is on sequence link
-    Then the user clicks on sequence link
 
 
-Feature:  Comments functionality
 
-  Scenario: User visit on Comments column
-    When the user is on comments section
-    Then the user writes his comments and enter
 
 
 

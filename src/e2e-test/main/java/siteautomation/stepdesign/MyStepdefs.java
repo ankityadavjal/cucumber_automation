@@ -1,47 +1,71 @@
+package siteautomation.stepdesign;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import siteautomation.actions.ActionsClass;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 
 public class MyStepdefs {
-    @Given("^the user is on the login page$")
-    public void theUserIsOnTheLoginPage() {
+    private WebDriver driver;
+    private ActionsClass actionsClass;
+
+
+    @Given("Open up chrome and launch application")
+    public void openUpChromeAndLaunchApplication() {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\HP\\Downloads\\chromedriver_win32\\chromedriver.exe");
+
+        driver = new ChromeDriver();
+        actionsClass = new ActionsClass(driver);
+        driver.get("https://www.c-sharpcorner.com/");
+        //System.out.println(driver.getTitle());
+        driver.manage().window().maximize();
+        actionsClass.find_Login();
+
+
     }
 
-    @When("^the user enters valid credentials$")
-    public void theUserEntersValidCredentials() {
+    @When("Enter the valid username and password")
+    public void enterTheValidUsernameAndPassword() {
+        actionsClass.set_Username("ankityadavjal2627@gmail.com");
+        actionsClass.set_Password("ankit123");
+
     }
 
-    @Then("^the user should be logged in$")
-    public void theUserShouldBeLoggedIn() {
+    @And("User successfully logged in")
+    public void userSuccessfullyLoggedIn() {
+        actionsClass.click_Button();
     }
 
-    @When("^the user is on blogs button$")
-    public void theUserIsOnBlogsButton() {
-    }
 
-    @Then("^the user clicks on blogs button$")
+    @When("The user clicks on blogs button")
     public void theUserClicksOnBlogsButton() {
+        actionsClass.find_Blog();
     }
 
-    @When("^the user is on sequence link$")
-    public void theUserIsOnSequenceLink() {
-    }
 
-    @Then("^the user clicks on sequence link$")
+    @When("The user clicks on sequence link")
     public void theUserClicksOnSequenceLink() {
+        actionsClass.find_Sequence();
     }
 
-    @When("^the user is on comments section$")
-    public void theUserIsOnCommentsSection() {
-    }
 
-    @Then("^the user writes his comments and enter$")
-    public void theUserWritesHisCommentsAndEnter() {
+    @Then("The user writes his comment and enter")
+    public void theUserWritesHisCommentAndEnter() {
+
+        //driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("textarea[placeholder='Type your comment here and press Enter Key (Minimum 10 characters)']")));
+        actionsClass.set_Comment("hello my name is aman \ue007");
     }
 }

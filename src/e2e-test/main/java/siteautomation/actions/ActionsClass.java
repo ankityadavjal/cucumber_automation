@@ -14,7 +14,7 @@ public class ActionsClass {
         this.locators = PageFactory.initElements(driver, Locators.class);
     }
 
-    public void find_login() {
+    public void find_Login() {
         locators.findlogin.click();
     }
 
@@ -26,7 +26,7 @@ public class ActionsClass {
         locators.password.sendKeys(pass);
     }
 
-    public void click_button() {
+    public void click_Button() {
         locators.button.click();
     }
 
@@ -34,11 +34,11 @@ public class ActionsClass {
         locators.comment.sendKeys(comm);
     }
 
-    public void find_sequence() {
+    public void find_Sequence() {
         locators.findsequence.click();
     }
 
-    public void find_blog() {
+    public void find_Blog() {
         locators.findblogs.click();
     }
 }
