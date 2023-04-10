@@ -10,6 +10,7 @@ public class Locators {
     @FindBy(className = "login-btn")
     public WebElement findlogin;
 
+
     @FindBy(id = "TextBoxUserId")
     public WebElement username;
 
@@ -29,6 +30,7 @@ public class Locators {
     @FindBy(xpath = "//a[@href=\"https://www.c-sharpcorner.com/blogs\"]")
     public WebElement findblogs;
 
+    //dsfdsfdsfddsfdsfdsfds
 
 
 
