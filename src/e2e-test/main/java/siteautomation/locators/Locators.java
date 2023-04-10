@@ -31,7 +31,4 @@ public class Locators {
     public WebElement findblogs;
 
     //dsfdsfdsfddsfdsfdsfds
-
-
-
 }
