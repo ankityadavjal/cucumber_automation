@@ -54,7 +54,9 @@ public class MyStepdefs {
 
 
     @When("The user clicks on sequence link")
-    public void theUserClicksOnSequenceLink() {
+    public void theUserClicksOnSequenceLink()
+    {
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         actionsClass.find_Sequence();
     }
 
