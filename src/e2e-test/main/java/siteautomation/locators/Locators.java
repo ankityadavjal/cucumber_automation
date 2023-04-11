@@ -24,7 +24,7 @@ public class Locators {
     @FindBy(css = "textarea[placeholder='Type your comment here and press Enter Key (Minimum 10 characters)']")
     public WebElement comment;
 
-    @FindBy(xpath = "//a[@href=\"https://www.c-sharpcorner.com/blogs/what-is-sequence-in-sql-why-sequence\"]")
+    @FindBy(xpath = "//a[@href=\"https://www.c-sharpcorner.com/blogs/what-is-sequence-in-sql-why-sequence\"]" )
     public WebElement findsequence;
 
     @FindBy(xpath = "//a[@href=\"https://www.c-sharpcorner.com/blogs\"]")
