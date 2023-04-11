@@ -11,7 +11,6 @@ public class ActionsClass {
 
     public ActionsClass(WebDriver driver) {
         this.driver = driver;
-        //hello
         this.locators = PageFactory.initElements(driver, Locators.class);
     }
 
