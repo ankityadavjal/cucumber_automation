@@ -9,6 +9,18 @@ Feature: Adding Comments functionality on the website
     Then The user writes his comment and enter
 
 
+  Scenario: user validate file plugin
+    Given Open up chrome and launch
+    When User select a plugin:"File" from the plugins
+    When User clicks on properties
+    And Enter input plugin property: "referenceName" with value: "Referencename"
+    And Enter input plugin property: "path" with value: "ankityadav"
+    And Select dropdown plugin property: "select-format" with option value: "tsv"
+    And User click on validate button
+    Then Validate mandatory property error for:"referenceName"
+
+
+
 
 
 
